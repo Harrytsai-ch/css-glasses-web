@@ -1,5 +1,8 @@
-@import './layout/header.scss';
+@import './base/reset';
+@import './helpers/variable';
+@import './layout/nav.scss';
 @import './layout/footer.scss';
+@import './pages/index';
 
 
-@import './pages/index.scss';
+
