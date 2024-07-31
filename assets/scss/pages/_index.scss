@@ -303,7 +303,7 @@ h2 {
             max-width:calc(0.83 * 696px);
         }
         @include mobile {
-            max-width: 100%;
+            max-width: calc(348px + 24px);
             padding: 40px 12px;
         }
     }
