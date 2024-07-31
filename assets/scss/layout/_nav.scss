@@ -52,7 +52,7 @@
         a:hover{
             text-decoration-color:$text-color-light;
             text-decoration-line: underline;
-            text-underline-offset:30px;
+            text-underline-offset:25px;
             text-decoration-thickness: 5px;
             @include  mobile-large {
                 text-underline-offset:15px;
