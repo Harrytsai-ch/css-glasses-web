@@ -1,0 +1,33 @@
+.nav-product{
+    background-color: #fff;
+    &-container{
+        max-width:1296px;
+        margin:0 auto;
+    }
+    &-list{
+        display: flex;
+        justify-content: space-between;
+        li {
+            width: 33.33%;
+            text-align: center;
+            border:1px solid $border-color;
+
+            a{  
+                font-size:$fs-2 * 2;
+                font-family: "Roboto";
+                font-weight: 500;
+                color:$text-color-deep-dark;
+                padding: 24px 0px;
+                display: block;
+            }
+
+            &:hover{
+                text-decoration-line:underline;
+                text-decoration-color: $primary-color;
+                text-decoration-thickness: 8px;
+                text-underline-offset:30px; 
+            }
+            
+        }
+    }
+}
