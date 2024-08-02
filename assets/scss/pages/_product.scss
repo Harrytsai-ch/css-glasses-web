@@ -3,14 +3,25 @@
     &-container{
         max-width:1296px;
         margin:0 auto;
+        @include pad{
+            max-width: 100%;
+            margin:0;
+        }
     }
     &-list{
         display: flex;
         justify-content: space-between;
+
         li {
-            width: 33.33%;
+            width: calc(33.333% + 2px);
+            margin-left: -1px; // 负边距覆盖左侧边框
             text-align: center;
             border:1px solid $border-color;
+            position: relative;
+            
+            &:first-child {
+                margin-left: 0px;//第一個li不需要除邊框
+            }
 
             a{  
                 font-size:$fs-2 * 2;
@@ -19,15 +30,167 @@
                 color:$text-color-deep-dark;
                 padding: 24px 0px;
                 display: block;
+                @include pad {
+                    font-size:$fs-4;
+                    padding: 16px 0px;
+                }
+                @include mobile-large{
+                    font-size:$fs-2;
+                }
             }
 
-            &:hover{
-                text-decoration-line:underline;
-                text-decoration-color: $primary-color;
-                text-decoration-thickness: 8px;
-                text-underline-offset:30px; 
+            &:hover::after {
+                content: "";
+                width: 100%;
+                bottom: 0; // 定位到底部
+                left: 0;
+                height: 8px; // 底线的厚度
+                position: absolute; // 添加绝对定位
+                background-color: $primary-color;
             }
-            
+        }
+    }
+}
+
+
+.header-img-container{
+    max-width: 100%;
+    display: flex;
+    .header-img-box {
+        width: 50%;
+        img{
+            width: 100%;
+        }
+    }
+}
+
+
+.product-demo {
+    background-color: #fff;
+    h1 {
+        font-size:42px;
+        font-weight:$fw-3;
+        color:$text-color-deep-dark;
+        font-family: "Roboto";
+        text-align: center;
+        @include mobile-large {
+            font-size:$fs-4;
+        }
+    }
+    
+    h2 {
+        font-size:$fs-2 * 2;
+        font-weight:$fw-1;
+        color:$text-color-deep-dark;
+        text-align: center;
+        margin-bottom: 32px;
+        @include mobile-large {
+            font-size:$fs-4;
+            margin-bottom: 24px;
+        }
+    }
+
+    &-container {
+        max-width: calc(1296px + 24px);
+        margin: 0 auto;
+        padding: 80px 12px;
+        @include pad{
+            max-width: calc(696px + 24px);
+        }
+
+        @include mobile-large{
+            max-width: calc(348px + 24px);
+            padding: 40px 12px;
+        }
+    }
+
+    &-row {
+        display: flex;
+        flex-wrap:wrap;
+        row-gap:80px;
+        margin: 0px -12px;
+        @include pad {
+            row-gap:40px;
+        } 
+        @include mobile-large {
+            row-gap:24px;
+        } 
+    }
+
+    &-info {
+        display: flex;
+        justify-content: space-between;
+        font-family: "Roboto";
+        font-size: $fs-4;
+        h3 {
+            color:$text-color-deep-dark;
+            font-weight:$fw-1;
+        }
+        span {
+            color: $primary-color;
+            font-weight: $fw-3;
+        }
+    }
+
+    &-color-block {
+        display: flex;
+        column-gap: 8px;
+        .block-1, .block-2 {
+        height: 24px;
+        width: 24px;
+        border-radius: 4px;
+        }
+        
+        .block-1 {
+            background-color: #5F3E2D;
+        }
+        
+        .block-2 {
+            background-color: #B75929;
+        }
+    }
+    // btn預設寬度為1296px
+    &-btn {
+        margin-top: 80px;
+        display: flex;
+        justify-content: center;
+        color:#555555;
+        font-size: 19px;
+        // position: relative;
+        @include mobile-large {
+            margin-top: 64px;
+            font-size: 16px;
+        }
+        
+        &-fix{
+            text-align: center;
+            border: 1px solid #555555;
+            margin-left: -1px;// 去除重疊邊框
+            a {
+                padding: 12px 11px;
+            }
+            &:hover{
+                background-color:#F2F2F2;
+            }
+        }
+
+        &-flow {
+            display: flex;
+            li {
+                text-align: center;
+                border: 1px solid #555555;
+                margin-left:-1px; // 去除重疊邊框
+                a {
+                    padding: 12px 16px;
+                    @include mobile-large {
+                        padding: 12px 14px;
+                    }
+                }
+                &:hover{
+                    background-color:#000000;
+                    color: #fff;
+                }
+            }
         }
     }
 }

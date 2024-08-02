@@ -1,0 +1,37 @@
+$col-num:12;
+$gap:24px;
+
+
+@for $i from 1 through $col-num {
+    .col-#{$i} {
+        width: 100% * ($i / $col-num);
+        padding-left: $gap/2;
+        padding-right: $gap/2;
+    }
+}
+
+@include pad {
+    @for $i from 1 through $col-num {
+        .col-md-#{$i} {
+            width: 100% * ($i / $col-num);
+            padding-left: $gap/2;
+            padding-right: $gap/2;
+        }
+    }
+    .display-none-md {
+        display:none;
+    }
+}
+
+@include mobile-large {
+    @for $i from 1 through $col-num {
+        .col-sm-#{$i} {
+            width: 100% * ($i / $col-num);
+            padding-left: $gap/2;
+            padding-right: $gap/2;
+        }
+    }
+    .display-none-sm {
+        display:none;
+    }
+}

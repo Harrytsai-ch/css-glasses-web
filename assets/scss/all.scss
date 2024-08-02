@@ -3,9 +3,11 @@
 @import './helpers/variable';
 @import './helpers/mixin';
 
+@import './layout/_grid.scss';
 @import './layout/nav.scss';
 @import './layout/footer.scss';
 
 @import './pages/index';
-@import './pages/product'
+@import './pages/product';
+@import './pages/store';
 

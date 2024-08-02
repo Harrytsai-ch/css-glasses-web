@@ -45,7 +45,7 @@
                 font-size:$fs-3;
                 font-weight:$fw-1;
                 @include mobile-large {
-                    font-size:$fs-2 * 1.5;
+                    font-size:$fs-2 * 1.25;
                 }
                 @include mobile {
                     font-size:$fs-2 * 1;

@@ -1,0 +1,52 @@
+.store{
+    &-container {
+        max-width: calc(1296px + 24px);
+        margin: 0 auto;
+        padding: 0px 12px;
+        
+        h2 {
+            font-size:$fs-4 * 2;
+            color: $text-color-deep-dark; 
+            font-weight:$fw-2;
+            text-align-last: left;
+            border-left: 8px #9F1213 solid;
+            margin-bottom: 32px;
+            padding-left: 16px;
+        }
+
+        label, h3 {
+            font-size:$fs-4;
+            color: $text-color-deep-dark;
+            font-weight:$fw-1; 
+        }
+    }
+        
+    &-row{
+        display: flex;
+        margin: 0px -12px;
+        flex-wrap: wrap;
+        h3{
+            padding: 8px 0px 8px 24px;
+            border-bottom: 1px solid #00000020;
+        }
+    }
+
+    &-content {
+        padding: 0px 24px;
+        &-contact {
+            padding: 16px 0px;
+            li {
+                font-size: $fs-1;
+                font-weight: $fw-1;
+                color:$text-color-deep-dark ;
+            }
+        }
+    }
+    
+    &-info {
+        padding: 16px 170px;
+        background-color: #000;
+        color:#fff;
+    }
+
+}
