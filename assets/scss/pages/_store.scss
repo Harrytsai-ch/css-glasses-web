@@ -19,6 +19,9 @@
             border-left: 8px #9F1213 solid;
             margin-bottom: 32px;
             padding-left: 16px;
+            @include mobile-large{
+                font-size:$fs-4 * 1;
+            }
         }
 
         label, h3 {
