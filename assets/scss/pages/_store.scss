@@ -2,7 +2,14 @@
     &-container {
         max-width: calc(1296px + 24px);
         margin: 0 auto;
-        padding: 0px 12px;
+        padding: 80px 12px;
+        @include pad {
+            max-width: calc(696px + 24px);
+        }
+        @include mobile-large {
+            max-width: calc(348px + 24px);
+            padding: 40px 12px;
+        }
         
         h2 {
             font-size:$fs-4 * 2;
@@ -19,12 +26,26 @@
             color: $text-color-deep-dark;
             font-weight:$fw-1; 
         }
+
+        label,input{
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+        input{
+            margin-left: 16px;
+            font-size:18px;
+        }
     }
         
     &-row{
         display: flex;
         margin: 0px -12px;
         flex-wrap: wrap;
+        row-gap:48px;
+        @include mobile-large {
+            row-gap:24px;
+        }
         h3{
             padding: 8px 0px 8px 24px;
             border-bottom: 1px solid #00000020;
@@ -32,9 +53,12 @@
     }
 
     &-content {
-        padding: 0px 24px;
-        &-contact {
-            padding: 16px 0px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        border:1px solid #00000020;
+        &-list {
+            padding: 16px 24px;
             li {
                 font-size: $fs-1;
                 font-weight: $fw-1;
@@ -44,9 +68,15 @@
     }
     
     &-info {
-        padding: 16px 170px;
+        margin-top: auto;
+        text-align: center;
         background-color: #000;
         color:#fff;
+        a {
+            width: 100%;
+            display: block;
+            padding:16px 0px;  
+        }
     }
 
 }
